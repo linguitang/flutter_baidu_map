@@ -46,7 +46,6 @@ public class FlutterBaiduMapPlugin implements MethodCallHandler {
 
   private synchronized void initClient(BDAbstractLocationListener listener){
     if (mLocationClient == null) {
-		Log.d("sss","new client");
       mLocationClient = new LocationClient(activity.getApplicationContext());
       //声明LocationClient类
       mLocationClient.registerLocationListener(listener);
