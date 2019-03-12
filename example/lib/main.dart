@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_baidu_map/flutter_baidu_map.dart';
-import 'package:permission_handler/permission_handler.dart';
+//import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   FlutterBaiduMap.setAK("zXd9nxXOYlz6iUbK7o7iHM5nKdKgGDw8");
@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
               RaisedButton(
                 child: Text("点击获取当前定位"),
                 onPressed: () async{
-                  PermissionStatus permission = await PermissionHandler().checkPermissionStatus(PermissionGroup.location);
+                  /*PermissionStatus permission = await PermissionHandler().checkPermissionStatus(PermissionGroup.location);
                   bool hasPermission = permission == PermissionStatus.granted;
                   if(!hasPermission){
                     Map<PermissionGroup, PermissionStatus> map = await PermissionHandler().requestPermissions([
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
                       });
                       return;
                     }
-                  }
+                  }*/
                   setState(() {
                     _locationResult = "正在定位中...";
                   });
