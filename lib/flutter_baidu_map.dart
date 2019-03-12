@@ -56,7 +56,6 @@ class FlutterBaiduMap {
   }
   static Future<BaiduLocation>  getCurrentLocation() async {
     final Map result = await _channel.invokeMethod('getCurrentLocation');
-    print(result);
     return new BaiduLocation.fromMap(result);
   }
 }

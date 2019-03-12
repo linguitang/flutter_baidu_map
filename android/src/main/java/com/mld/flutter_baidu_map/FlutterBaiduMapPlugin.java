@@ -38,7 +38,7 @@ public class FlutterBaiduMapPlugin implements MethodCallHandler {
   @Override
   public void onMethodCall(MethodCall call, Result result) {
     if (call.method.equals("setAK")){
-      result(true);
+      result.success(true);
     }else if (call.method.equals("getCurrentLocation")){
       initClient(new CurrentLocationListener(result));
     }else {
