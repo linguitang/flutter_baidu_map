@@ -1,8 +1,8 @@
 name: flutter_baidu_map
-description: A new flutter plugin project.
+description: flutter 百度地图定位组件.
 version: 0.0.1
-author:
-homepage:
+author: lingt<935486865@qq.com>
+homepage: https://github.com/linguitang/flutter_baidu_map
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

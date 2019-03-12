@@ -52,7 +52,15 @@ import 'package:flutter_baidu_map/flutter_baidu_map.dart';
 <key>NSLocationWhenInUseUsageDescription</key>
 <string>要用定位</string>
 ```
+## 怎么用
 
+先导入dart包
+修改pubspec.yaml，增加依赖：
+
+```
+dependencies:
+  flutter_baidu_map: ^0.0.1
+```
 
 在要用的地方导入:
 
