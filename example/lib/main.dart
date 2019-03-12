@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_baidu_map/flutter_baidu_map.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  FlutterBaiduMap.setAK("zXd9nxXOYlz6iUbK7o7iHM5nKdKgGDw8");
+  runApp(MyApp());
+}
 
 class MyApp extends StatefulWidget {
   @override

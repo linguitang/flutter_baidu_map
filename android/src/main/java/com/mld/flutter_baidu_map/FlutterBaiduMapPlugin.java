@@ -37,7 +37,9 @@ public class FlutterBaiduMapPlugin implements MethodCallHandler {
 
   @Override
   public void onMethodCall(MethodCall call, Result result) {
-    if (call.method.equals("getCurrentLocation")){
+    if (call.method.equals("setAK")){
+      result(true);
+    }else if (call.method.equals("getCurrentLocation")){
       initClient(new CurrentLocationListener(result));
     }else {
       result.notImplemented();
@@ -129,9 +131,7 @@ public class FlutterBaiduMapPlugin implements MethodCallHandler {
     Map<String,Object> json = new HashMap<>();
     json.put("latitude",location.getLatitude());    //获取纬度信息
     json.put("longitude",location.getLongitude());    //获取经度信息
-    json.put("radius",location.getRadius());    //获取定位精度，默认值为0.0f
 
-    json.put("addr",location.getAddrStr());    //获取详细地址信息
     json.put("country",location.getCountry());    //获取国家
     json.put("countryCode", location.getCountryCode());
     json.put("province",location.getProvince());    //获取省份
@@ -139,18 +139,10 @@ public class FlutterBaiduMapPlugin implements MethodCallHandler {
     json.put("cityCode", location.getCityCode());
     json.put("district",location.getDistrict());    //获取区县
     json.put("street",location.getStreet());    //获取街道信息
-    json.put("streetNumber",location.getStreetNumber());    //获取街道号码
-    json.put("time",location.	getTime());    //server返回的当前定位时间
-    json.put("direction", location.getDirection());   //gps定位结果时，行进的方向，单位度
 
     json.put("locationDescribe",location.getLocationDescribe());    //获取位置描述信息
 
-   // json.put("poiList",location.getPoiList());
-        //获取周边POI信息
-        //POI信息包括POI ID、名称等，具体信息请参照类参考中POI类的相关说明
-			
-    json.put("coorType",location.getCoorType());
-    //获取经纬度坐标类型，以LocationClientOption中设置过的坐标类型为准
+    json.put("isInChina",location.getLocationWhere() == BDLocation.LOCATION_WHERE_IN_CN);
   
     json.put("errorCode",location.getLocType());
     //获取定位类型、定位错误返回码，具体信息可参照类参考中BDLocation类中的说明
