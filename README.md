@@ -13,7 +13,7 @@
 http://lbsyun.baidu.com/apiconsole/key
 
 2、修改 `你的项目目录/app/build.gradle`
-在`android/defaultConfig`节点修改`manifestPlaceholders`,新增百度地图key配置
+在`android/defaultConfig`节点修改`manifestPlaceholders`,新增百度地图AK配置
 
 ```
 android {
@@ -22,7 +22,7 @@ android {
     defaultConfig {
         .....
          manifestPlaceholders = [
-                BAIDU_MAP_KEY : "你的百度地图key", /// 百度地图key
+                BAIDU_MAP_KEY : "你的百度地图AK", /// 百度地图AK
         ]
 
     }
@@ -58,6 +58,7 @@ import 'package:flutter_baidu_map/flutter_baidu_map.dart';
 
 ```
 import 'package:flutter_baidu_map/flutter_baidu_map.dart';
+```
 
 直接获取定位:
 
