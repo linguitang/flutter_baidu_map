@@ -63,5 +63,15 @@ import 'package:flutter_baidu_map/flutter_baidu_map.dart';
 直接获取定位:
 
 ```
-await FlutterBaiduMap.getCurrentLocation();
+PermissionStatus permission = await PermissionHandler().checkPermissionStatus(PermissionGroup.location);
+bool hasPermission = permission == PermissionStatus.granted;
+if(!hasPermission){
+    Map<PermissionGroup, PermissionStatus> map = await PermissionHandler().requestPermissions([
+        PermissionGroup.location
+    ]);
+    if(map.values.toList()[0] != PermissionStatus.granted){
+        return;
+    }
+}
+BaiduLocation location = await FlutterBaiduMap.getCurrentLocation();
 ```
