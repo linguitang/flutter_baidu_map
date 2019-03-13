@@ -141,6 +141,7 @@ public class FlutterBaiduMapPlugin implements MethodCallHandler {
     json.put("street",location.getStreet());    //获取街道信息
 
     json.put("locationDescribe",location.getLocationDescribe());    //获取位置描述信息
+    json.put("adCode",location.getAdCode());    //获取城市adcode
 
     json.put("isInChina",location.getLocationWhere() == BDLocation.LOCATION_WHERE_IN_CN);
   

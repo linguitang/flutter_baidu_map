@@ -65,6 +65,7 @@
          @"street":rgcData.street,
          
          @"locationDescribe":rgcData.locationDescribe,
+         @"adCode":rgcData.adCode,
          @"isInChina":@(isInChina),
          @"errorCode":@(161),
     };

@@ -59,7 +59,7 @@ import 'package:flutter_baidu_map/flutter_baidu_map.dart';
 
 ```
 dependencies:
-  flutter_baidu_map: ^0.0.4
+  flutter_baidu_map: ^0.0.5
 ```
 
 在要用的地方导入:
