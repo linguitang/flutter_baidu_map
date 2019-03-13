@@ -47,19 +47,19 @@ class BaiduLocation{
 
   Map getMap() {
     return {
-      latitude: latitude,
-      longitude:longitude,
+      "latitude": latitude,
+      "longitude":longitude,
 
-      country:country,
-      countryCode:countryCode,
-      province: province,
-      cityCode: cityCode,
-      city: city,
-      district : district,
-      street:street,
-      locationDescribe:locationDescribe,
-      errorCode:errorCode,
-      isInChina:isInChina
+      "country":country,
+      "countryCode":countryCode,
+      "province": province,
+      "cityCode": cityCode,
+      "city": city,
+      "district" : district,
+      "street":street,
+      "locationDescribe":locationDescribe,
+      "errorCode":errorCode,
+      "isInChina":isInChina
     };
   }
 }
