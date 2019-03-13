@@ -44,6 +44,24 @@ class BaiduLocation{
   bool isSuccess() {
     return errorCode == 161;
   }
+
+  Map getMap() {
+    return {
+      latitude: latitude,
+      longitude:longitude,
+
+      country:country,
+      countryCode:countryCode,
+      province: province,
+      cityCode: cityCode,
+      city: city,
+      district : district,
+      street:street,
+      locationDescribe:locationDescribe,
+      errorCode:errorCode,
+      isInChina:isInChina
+    };
+  }
 }
 
 class FlutterBaiduMap {
