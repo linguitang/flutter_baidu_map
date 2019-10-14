@@ -46,29 +46,41 @@
     BMKLocationReGeocode* rgcData = location.rgcData;
     BOOL isInChina = [BMKLocationManager BMKLocationDataAvailableForCoordinate:location.location.coordinate withCoorType:BMKLocationCoordinateTypeBMK09LL];
     
-    return @{
-         @"latitude":@(location.location.coordinate.latitude),
-         @"longitude":@(location.location.coordinate.longitude),
-         
-         @"country":rgcData.country,
-         @"countryCode":rgcData.countryCode,
-         
-         @"province":rgcData.province,
-         
-         @"city":rgcData.city,
-         @"cityCode":rgcData.cityCode,
-         
-         @"district":rgcData.district,
-         
-         
-         
-         @"street":rgcData.street,
-         
-         @"locationDescribe":rgcData.locationDescribe,
-         @"adCode":rgcData.adCode,
-         @"isInChina":@(isInChina),
-         @"errorCode":@(161),
-    };
+    if(rgcData.district==nil || rgcData.adCode == nil){
+        //国外定位nil的返回空
+        return @{
+             @"latitude":@(location.location.coordinate.latitude),
+             @"longitude":@(location.location.coordinate.longitude),
+             @"country":rgcData.country,
+             @"countryCode":rgcData.countryCode,
+             @"province":rgcData.province,
+             @"city":rgcData.city,
+             @"cityCode":rgcData.cityCode,
+             @"district":@(""),
+             @"street":rgcData.street,
+             @"locationDescribe":rgcData.locationDescribe,
+             @"adCode":@(""),
+             @"isInChina":@(isInChina),
+             @"errorCode":@(161),
+        };
+    }else{
+        //国内定位正常
+        return @{
+             @"latitude":@(location.location.coordinate.latitude),
+             @"longitude":@(location.location.coordinate.longitude),
+             @"country":rgcData.country,
+             @"countryCode":rgcData.countryCode,
+             @"province":rgcData.province,
+             @"city":rgcData.city,
+             @"cityCode":rgcData.cityCode,
+             @"district":rgcData.district,
+             @"street":rgcData.street,
+             @"locationDescribe":rgcData.locationDescribe,
+             @"adCode":rgcData.adCode,
+             @"isInChina":@(isInChina),
+             @"errorCode":@(161),
+        };
+    }
 }
 
 -(void)getCurrentLocation: (FlutterResult)result{
