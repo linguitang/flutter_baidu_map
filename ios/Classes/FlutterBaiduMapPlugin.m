@@ -58,6 +58,7 @@
              @"cityCode":rgcData.cityCode,
              @"district":@(""),
              @"street":rgcData.street,
+             @"streetNumber":rgcData.streetNumber,
              @"locationDescribe":rgcData.locationDescribe,
              @"adCode":@(""),
              @"isInChina":@(isInChina),
