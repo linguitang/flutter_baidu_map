@@ -139,6 +139,7 @@ public class FlutterBaiduMapPlugin implements MethodCallHandler {
     json.put("cityCode", location.getCityCode());
     json.put("district",location.getDistrict());    //获取区县
     json.put("street",location.getStreet());    //获取街道信息
+    json.put("streetNumber",location.getStreetNumber());    //获取街道号信息
 
     json.put("locationDescribe",location.getLocationDescribe());    //获取位置描述信息
     json.put("adCode",location.getAdCode());    //获取城市adcode

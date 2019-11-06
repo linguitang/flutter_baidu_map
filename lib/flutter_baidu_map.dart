@@ -13,6 +13,7 @@ class BaiduLocation{
   final String city;
   final String district;
   final String street;
+  final String streetNumber;
   final String locationDescribe;
   final String adCode;
   final int errorCode;
@@ -21,7 +22,7 @@ class BaiduLocation{
 
   BaiduLocation({this.latitude, this.longitude,
       this.country, this.countryCode, this.province,
-      this.cityCode, this.city, this.district, this.street,
+      this.cityCode, this.city, this.district, this.street,this.streetNumber,
       this.locationDescribe,this.adCode,this.errorCode,this.isInChina});
 
   factory BaiduLocation.fromMap(dynamic value){
@@ -36,6 +37,7 @@ class BaiduLocation{
       city: value['city'],
       district : value['district'],
       street:value['street'],
+      streetNumber:value['streetNumber'],
       locationDescribe:value['locationDescribe'],
       adCode:value['adCode'],
       errorCode:value['errorCode'],
@@ -59,6 +61,7 @@ class BaiduLocation{
       "city": city,
       "district" : district,
       "street":street,
+      "streetNumber":streetNumber,
       "locationDescribe":locationDescribe,
       "adCode":adCode,
       "errorCode":errorCode,
